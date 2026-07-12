@@ -20,3 +20,5 @@ async function writeInFile(data) {
     }
 }
 
+export default {getFile, writeInFile}
+

@@ -1,9 +1,9 @@
 import express from "express";
-
+import middleWare from "./middleware.js"
 const router = express.Router();
 
 
-router.post("/", (req, res)=>{})
+router.post("/", middleWare.postOrder(), )
 
 
 router.get("/", (req, res)=>{})
