@@ -23,4 +23,14 @@ async function getAllOrders(req, res){
     res.status(200).json({"orders" : orders})
 }
 
-export default  {postNewOrder, getAllOrders}
+async function delOneOrder(req, res){
+    const {id} = req.params
+    const orders = await getFile()
+    const filteredOrders = orders.filter(order => order.id !== +id)
+    if (orders.length === filteredOrders.length) return res.status(404).json({"error" : "not found any order in this ID"})
+    
+    else await writeInFile(filteredOrders)
+          return res.status(200).json({"result" : "order was deleted"})
+}
+
+export default  {postNewOrder, getAllOrders, delOneOrder}

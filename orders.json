@@ -16,11 +16,5 @@
         "status": "new",
         "table": 7,
         "customer": "david"
-    },
-    {
-        "id": 4,
-        "status": "new",
-        "table": 23,
-        "customer": "harrvy"
     }
 ]

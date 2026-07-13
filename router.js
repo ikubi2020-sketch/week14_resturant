@@ -12,15 +12,13 @@ router.post("/", middleWare.postOrder, ctrl.postNewOrder)
 router.get("/", ctrl.getAllOrders)
 
 
-router.post("/:id", (req, res)=>{})
+router.patch("/:id", (req, res)=>{})
 
 
 router.put("/:id", (req, res)=>{})
 
 
-router.delete("/:id", (req, res)=>{})
-
-
+router.delete("/:id",middleWare.delOrder, ctrl.delOneOrder)
 
 
 

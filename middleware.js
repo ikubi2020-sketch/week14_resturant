@@ -15,5 +15,10 @@ function postOrder(req, res, next) {
     next()
 }
 
+function delOrder(req, res, next) {
+    const {id} = req.params
+    if(isNaN(Number(id))) return res.status(400).json({"result" : "ID not a number"})
+    next()
+}
 
-export default {postOrder}
+export default {validStatusUpdate, postOrder, delOrder}
