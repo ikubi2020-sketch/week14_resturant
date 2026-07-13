@@ -9,7 +9,7 @@ const router = express.Router();
 router.post("/", middleWare.postOrder, ctrl.postNewOrder)
 
 
-router.get("/", (req, res)=>{})
+router.get("/", ctrl.getAllOrders)
 
 
 router.post("/:id", (req, res)=>{})

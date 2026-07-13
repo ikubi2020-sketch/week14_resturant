@@ -14,9 +14,13 @@ async function postNewOrder(req, res) {
     newOrder.customer = req.body.customer
     const orders = await getFile()
     orders.push(newOrder)
-    console.log(orders)
     await writeInFile(orders)
     return res.status(200).json("well done")
 };
 
-export default  {postNewOrder}
+async function getAllOrders(req, res){
+    const orders = await getFile()
+    res.status(200).json({"orders" : orders})
+}
+
+export default  {postNewOrder, getAllOrders}
