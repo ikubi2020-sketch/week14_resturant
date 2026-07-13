@@ -9,7 +9,7 @@ const app = express();
 
 app.use(express.json())
 
-app.use("./orders", router)
+app.use("/orders", router)
 
 app.listen(PORT, ()=>{
     console.log("server running")

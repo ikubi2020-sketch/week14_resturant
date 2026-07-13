@@ -4,21 +4,21 @@ import fs from "fs/promises"
 
 async function getFile() {
     try {
-        const file = await fs.readFile("./order.json", "utf-8")
+        const file = await fs.readFile("./orders.json", "utf-8")
         return JSON.parse(file)
-    } catch (e){
+    } catch (e) {
         console.log(e)
     }
 }
 
 async function writeInFile(data) {
     try {
-    const file = await fs.writeFile(JSON.stringify(data), "./order.json")
-    return "done"
-    } catch(e){
+        const file = await fs.writeFile("./orders.json", JSON.stringify(data))
+        return "done"
+    } catch (e) {
         console.log(e)
     }
 }
 
-export default {getFile, writeInFile}
+export { getFile, writeInFile }
 
