@@ -12,7 +12,7 @@ router.post("/", middleWare.postOrder, ctrl.postNewOrder)
 router.get("/", ctrl.getAllOrders)
 
 
-router.patch("/:id", (req, res)=>{})
+router.patch("/:id", middleWare.validStatusUpdate,  )
 
 
 router.put("/:id", (req, res)=>{})

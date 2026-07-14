@@ -1,10 +1,13 @@
 
 
 
-function validStatusUpdate(newStatus){
+function validStatusUpdate(req, res, next){
+    const {id} = req.params
+    const {status} = req.body
     const validStatuses = ["preparing", "ready", "delivered", "canceled"];
-    if (!validStatuses.includes(newStatus)) return res.status(400).json ({"result" : "incorrect status"})
-    else return "done"
+    if (!validStatuses.includes(status) || status == null) return res.status(400).json ({"result" : "incorrect status"})
+    if (typeof(isNaN(Number(id))))  return res.status(400).json ({"result" : "incorrect ID"})
+    next()
 }
 
 

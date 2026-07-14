@@ -5,7 +5,7 @@ function changStatus(newStatus, oldStatus) {
     else if (newStatus === "ready" && oldStatus !== "preparing") return { "status": 400, "result": "only preparing can be updated" }
     else if (newStatus === "delivered" && oldStatus !== "ready") return { "status": 400, "result": "only ready can be updated" }
     else if (newStatus === "canceled" && !["new", "preparing"].includes(oldStatus)) return { "status": 400, "result": "only preparing and new can be updated" }
-    else return { "status": 200, "result": "status updata matched" }
+    else return { "status": 200}
 }
 
 function autoIncrement() {
